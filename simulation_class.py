@@ -9,9 +9,7 @@ from config_io_module import read_cnf_atoms
 main_dir = './fortran_main/'
 gcm = jit(main_dir+'gcm_module.f90')
 mc = jit([main_dir+'seed_module.f90',main_dir+'gcm_module.f90',main_dir+'montecarlo_module.f90'], flags='-O3 -ffast-math')
-
-gr_dir = './allen_tildesley/'
-gr = jit(gr_dir+'gr_module.f90')
+gr = jit(main_dir+'gr_module.f90')
 
 class System: 
     
